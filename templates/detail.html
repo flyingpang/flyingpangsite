@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% load tags %}
+{% block title %} {{ blog.caption }} - flyingpang {% endblock %}
+
+
+{% block content_body %}
+  <div class="main_body">
+    <div class="blog_body">
+      <div class="blog_title">{{ blog.caption }}</div>
+      <div class="blog_info1">
+        <span class="blog_info1_list">
+          <span class="li_small_1">分类：<a href="{% url "classification-view" pk=blog.classification %}">{{ blog.classification }}</a></span>
+          <span class="li_small_1">作者：<a href="{% url 'author-view' pk=blog.author.id %}">{{ blog.author }}</a></span>
+          <span class="li_small_1">发表时间：{{ blog.publish_time|date:"Y-m-d H:i" }}</span>
+        </span>
+      </div>
+      <div class="blog_splitline"></div>
+      <div class="blog_description">{{ blog.content | add_code}}</div>
+    </div>
+            
+{% endblock %}

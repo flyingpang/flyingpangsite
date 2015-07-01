@@ -1,0 +1,31 @@
+
+<div class="container">
+    <nav class="navbar navbar-default" role="navigation" style="min-height: 75px; background-color: transparent">
+        <img alt = "Brand" src="/static/images/logo.jpg" class="img-responsive" style="float: left; height: 75px;width: 75px" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse " style="font-size: 25px;margin-top: 10px">
+                <ul class="nav navbar-nav navbar-left " style="margin-left: 200px">
+                    <li><a href="{% url "homepage_view" %}">首页</a></li>
+                    <li><a href="{% url "index_view" %}" style="margin-left: 45px">博客</a></li>
+                    <li><a href="{% url "image_view" %}" style="margin-left: 45px">图片</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url "logout_view" %}">退出</a></li>
+                    {% else %}
+                        <li><a href="{% url "login_view" %}">登录/注册</a></li>
+                    {% endif %}
+
+                </ul>
+            </div>
+        </div><!-- container-fluid div -->
+    </nav>
+</div><!-- end container div -->

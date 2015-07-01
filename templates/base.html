@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/base.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css">
+</head>
+<body class="full">
+    {% include "navbar.html" %}
+    <div class="container">
+        {% block main-body %}
+        {% endblock %}
+
+        <div style="position: fixed; left: 1560px; top: 800px">
+            <a href="#"><img src="/static/images/gotop1.png" alt="" onmouseover="javascript:this.src='/static/images/gotop2.png'" onmouseout="javascript:this.src='/static/images/gotop1.png'"/></a>
+    {#        <a href="#"> <img src="/static/images/gotop1.png" onmouseover="javascript:this.src=''"/></a>#}
+        </div>
+
+        <footer class="blog-footer">
+        <p>Copyright &copy; flyingpang</p>
+        </footer>
+    </div>
+</body>
+
+<script src="{{ STATIC_URL }}jquery/jquery.min.js"></script>
+<script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
+<script src="{{ STATIC_URL }}js/markmin.js"></script>
+</html>

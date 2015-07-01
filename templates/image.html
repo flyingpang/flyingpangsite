@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% block main-body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 collapse-main">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                  </ol>
+
+                  <!-- Wrapper for slides --> <!--images max-width:1200, so your image must larger than 1200 -->
+                  <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                      <img src="{{ STATIC_URL }}images/newmedf2.jpg" alt=".">
+                      <div class="carousel-caption">
+                        <p>一场与美的邂逅</p>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img src="{{ STATIC_URL }}images/newmedf3.jpg" alt="..">
+                      <div class="carousel-caption">
+                        <p>说走就走的旅行</p>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img src="{{ STATIC_URL }}images/newmedf1.jpg" alt="...">
+                      <div class="carousel-caption">
+                        <p>心灵和身体必须有一个在路上</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 马尔代夫 begin-->
+        <!-- list images max images is (1140px,750px) middle images is(570px,400px)-->
+        <div class="row">
+            <div class="col-md-12">
+                <img class="img-responsive" src="{{ STATIC_URL }}images/newmedflist1-1.jpg" alt="马尔代夫1-1">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" style="padding-left: -15px;padding-right: 0">
+                <img class="img-responsive" src="{{ STATIC_URL }}images/newmedflist2-1.jpg" alt="马尔代夫2-1">
+            </div>
+            <div class="col-md-6" style="padding-left: 0;padding-right: 15px">
+                <img class="img-responsive" src="{{ STATIC_URL }}images/newmedflist2-2.jpg" alt="马尔代夫2-2">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <img class="img-responsive" src="{{ STATIC_URL }}images/newmedflist1-2.jpg" alt="马尔代夫1-2">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <img class="img-responsive" src="{{ STATIC_URL }}images/newmedflist1-3.jpg" alt="马尔代夫1-2">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <img class="img-responsive" src="{{ STATIC_URL }}images/newmedflist1-4.jpg" alt="马尔代夫1-2">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" style="padding-left: -15px;padding-right: 0">
+                <img class="img-responsive" src="{{ STATIC_URL }}images/newmedflist2-3.jpg" alt="马尔代夫2-3">
+            </div>
+            <div class="col-md-6" style="padding-left: 0;padding-right: 15px">
+                <img class="img-responsive" src="{{ STATIC_URL }}images/newmedflist2-4.jpg" alt="马尔代夫2-4">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <img class="img-responsive" src="{{ STATIC_URL }}images/newmedflist1-5.jpg" alt="马尔代夫1-2">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" style="padding-left: -15px;padding-right: 0">
+                <img class="img-responsive" src="{{ STATIC_URL }}images/newmedflist2-5.jpg" alt="马尔代夫2-3">
+            </div>
+            <div class="col-md-6" style="padding-left: 0;padding-right: 15px">
+                <img class="img-responsive" src="{{ STATIC_URL }}images/newmedflist2-6.jpg" alt="马尔代夫2-4">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <img class="img-responsive" src="{{ STATIC_URL }}images/newmedflist1-6.jpg" alt="马尔代夫1-2">
+            </div>
+        </div>
+
+        <!--马尔代夫 end-->
+
+    </div>
+
+
+{% endblock %}

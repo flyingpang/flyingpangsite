@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% load tags %}
+{% block title %}Blog{% endblock %}
+{% block content_body %}
+<div class="main_body">
+    {% for obj in object_list %}
+        <div class="blog_body" style="margin-bottom: 30px">
+            <div class="blog_title"><a href="/detail/?id={{ obj.id }}">{{ obj.caption }}</a></div>
+            <div class="blog_info1">
+                <span class="blog_info1_list">
+                    <span class="li_small_1">分类:<a href="{% url 'classification-view' pk=obj.classification %}">{{ obj.classification }}</a></span>
+                    <span class="li_small_1">作者：<a href="{% url 'author-view' pk=obj.author.id %}">{{ obj.author }}</a></span>
+                    <span class="li_small_1">发表时间：{{ obj.publish_time | date:"Y-m-d H:i"}}</span>
+                </span>
+            </div>
+            <div class="blog_splitline"></div>
+            <div class="blog_description">{{ obj.content|truncatechars:80|add_code}}</div>
+            <div class="blog_info2">
+                <span class="blog_info2_list">
+                    <span class="li_small_2">标签:
+                        {% for tag in obj.tags.all %}<a href="{% url 'tag-view' pk=tag.id %}">{{ tag.tag_name }}&nbsp;</a>{% endfor %}
+                    </span>
+                </span>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

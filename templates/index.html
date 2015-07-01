@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load  tags%}
+{% block title %}Blog{% endblock %}
+{% block main-body %}
+
+    <div class="blog-header">
+        <h1 class="blog-title">flyingpang</h1>
+{#        <p class="lead blog-description">My first django project.</p>#}
+        <marquee behavior="alternate"><marquee width="450">天下古今之庸人，皆以一惰字致败；天下古今之才子，皆因一傲字致败。</marquee></marquee>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+            <div class="content_body">
+                {% block content_body %}
+                    <div class="main_body">
+                        {% for blog in blogs %}
+                            <div class="blog_body" style="margin-bottom: 30px">
+                                <div class="blog_title"><a href="/detail/?id={{ blog.id }}">{{ blog.caption }}</a></div>
+                                <div class="blog_info1">
+                                    <span class="blog_info1_list">
+                                        <span class="li_small_1">分类:<a href="{% url 'classification_view' pk=blog.classification %}">{{ blog.classification }}</a></span>
+                                        <span class="li_small_1">作者：<a href="{% url 'author-view' pk=blog.author.id %}">{{ blog.author }}</a></span>
+                                        <span class="li_small_1">发表时间：{{ blog.publish_time | date:"Y-m-d H:i"}}</span>
+                                    </span>
+                                </div>
+                                <div class="blog_splitline"></div>
+                                <div class="blog_description">
+                                    {{ blog.content|truncatechars:80|add_code}}
+                                </div>
+                                <div class="blog_info2">
+                                    <span class="blog_info2_list">
+                                        <span class="li_small_2">标签:
+                                            {% for tag in blog.tags.all %}<a href="{% url 'tag-view' pk=tag.id %}">{{ tag.tag_name }}&nbsp;</a>{% endfor %}
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+        <div class="col-sm-offset-1 col-sm-3 blog-sidebar">
+            <form class="navbar-form navbar-right sidebar-module" method="get">
+                 <div class="form-group">
+                        <input type="text" class="form-control" placeholder="搜索文章...">
+                 </div>
+                 <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+            </form>
+            <div class="sidebar-module sidebar-module-inset">
+                <h4>About me</h4>
+                <p>外表看似孱弱却内心无比坚强的闫小胖</p>
+            </div>
+            <div class="sidebar-module">
+                <h4>Type Index</h4>
+                <ol class="list-unstyled">
+                    <li><a href="{% url "classification_view" pk='Python' %}">python</a></li>
+                    <li><a href="{% url "classification_view" pk='Linux' %}">Linux</a></li>
+                    <li><a href="{% url "classification_view" pk='Django' %}">Django</a></li>
+                    <li><a href="{% url "classification_view" pk='Other' %}">Other</a></li>
+                </ol>
+            </div>
+            <div class="sidebar-module">
+                <h4>Date Index</h4>
+                <ol class="list-unstyled">
+                    <li><a href="/article/2014">2014</a></li>
+                    <li><a href="/article/2015">2015</a></li>
+                    <li><a href="#">2016</a></li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- end row div -->
+
+
+{% endblock %}
