@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'Blogapp',
     'bootstrap_toolkit',
     # 'django.contrib.sites',
+    # 'django.contrib.comments',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -90,6 +91,9 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
 )
 
+STATICFILES_DIRS = (
+    "C:/Users/flyingpang/PycharmProjects/Blog/static/",
+)
 
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",

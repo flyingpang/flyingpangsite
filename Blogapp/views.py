@@ -83,7 +83,6 @@ class ArticleYearView(YearArchiveView):
 class ImageView(TemplateView):
     template_name = 'image.html'
 
-
 class UserRegisterView(FormView):
     form_class = RegisterForm
     template_name = 'account/register.html'
@@ -97,3 +96,10 @@ class UserRegisterView(FormView):
 
         return HttpResponseRedirect(self.get_success_url())
 
+# test
+class ImageBoxView(TemplateView):
+    template_name = 'test/imgBox.html'
+
+
+class ImageDisplayView(TemplateView):
+    template_name = 'test/imgDisplay.html'

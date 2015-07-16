@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from Blogapp.views import blog_detail, ClassificationView, AuthorView, TagView, ArticleYearView, IndexView, ImageView, \
-    UserRegisterView, HomePageView
+    UserRegisterView, HomePageView, ImageBoxView, ImageDisplayView
 
 urlpatterns = patterns('',
     # Examples:
@@ -20,5 +20,9 @@ urlpatterns = patterns('',
     url(r'^account/login/$', 'django.contrib.auth.views.login', {'template_name': 'account/login.html'}, name='login_view'),
     url(r'^account/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}, name='logout_view'),
     url(r'^account/register/$', UserRegisterView.as_view(), name='user_register_view'),
+
+    # test
+    # url(r'^test/ImageBox/$', ImageBoxView.as_view(), name='test_view'),
+    url(r'^test/ImageDisplay/$', ImageDisplayView.as_view(), name='test_view'),
 
 )

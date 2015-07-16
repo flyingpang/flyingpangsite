@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>imgBox</title>
+    <link rel="stylesheet" href="/static/css/test/imgbox.css">
+    <script type="text/javascript" src="/static/jquery/jquery-2-1-4.js"></script>
+    <script type="text/javascript" src="/static/js/test/imgbox.pack.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+{#            $("example1").imgbox({#}
+{#                'speedIn'       :   0,#}
+{#                'speedOut'      :   0,#}
+{#                'alignment'     :   'center',#}
+{#                'overlayShow'   :   true,#}
+{#                'allowMultiple' :   false#}
+{#            });#}
+            $("example1").imgbox();
+        });
+    </script>
+</head>
+<body>
+
+<div id="content">
+    <h1>imgBox</h1>
+    <hr/>
+    <div id="images">
+        <a id="example2-1" title="" href="/static/images/newmedflist2-1.jpg"><img alt="" src="/static/images/newmedflist2-2.jpg" /></a>
+{#        <a id="example1" href="/static/images/newmedflist2-1.jpg"><img src="/static/images/newmedflist2-2.jpg" /></a>#}
+    </div>
+
+    <div id="credit"></div>
+</div>
+
+</body>
+</html>
